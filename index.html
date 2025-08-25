@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Your Name, MD - Personal Website</title>
+    <title>Shintaro Fujiwara - Personal Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,12 @@
     <header>
         <nav>
             <div class="logo">
-                <h1><a href="#hero">Dr. Your Name</a></h1>
+                <h1><a href="#hero">Shintaro Fujiwara</a></h1>
             </div>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#interests">Interests</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -28,11 +29,11 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <img src="profile.jpg" alt="Profile picture of Dr. Your Name" class="profile-pic">
+                <img src="profile.jpg" alt="Profile picture of Shintaro Fujiwara" class="profile-pic">
                 <div class="hero-text">
-                    <h2>Dr. Your Name, MD, PhD</h2>
-                    <p>Physician, Department of [Your Specialty]</p>
-                    <p>[Your Hospital or Institution]</p>
+                    <h2>Shintaro Fujiwara</h2>
+                    <p>Graduate School of Engineering</p>
+                    <p>Yokohama National University</p>
                 </div>
             </div>
         </section>
@@ -40,77 +41,94 @@
         <section id="about" class="container">
             <h2>About Me</h2>
             <p>
-                Welcome to my personal page. I am a dedicated physician specializing in [Your Specialty]. My work focuses on providing compassionate patient care while also engaging in clinical research to advance the field. Here, you can find information about my clinical interests, research publications, and professional background.
+                I am a researcher at Yokohama National University. My work is at the intersection of information theory and quantum physics, with a primary focus on wireless communication, coding theory, and the development of novel quantum computation algorithms.
             </p>
             <a href="cv.pdf" class="btn" target="_blank">View My CV (PDF)</a>
         </section>
 
-        <section id="interests" class="container">
-            <h2>Clinical & Research Interests</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h3>Interest Area 1 (e.g., Cardiology)</h3>
-                    <p>A brief description of your primary clinical or research interest. You can discuss specific conditions, treatments, or research questions you are focused on.</p>
+        <section id="experience" class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>MITOU Target Program</h3>
+                    <h4>Information-technology Promotion Agency, Japan (IPA)</h4>
+                    <p class="date">Jun 2025 - Present</p>
+                    <p class="description">Project: "Development of large-scale combinatorial optimization methods using quantum signal processing"</p>
                 </div>
-                <div class="research-item">
-                    <h3>Interest Area 2 (e.g., Medical Technology)</h3>
-                    <p>Describe another area of your professional focus. This could be a sub-specialty, a particular patient population, or an interest in new medical technologies.</p>
+                <div class="timeline-item">
+                    <h3>Technical Assistant</h3>
+                    <h4>Yokohama National University</h4>
+                    <p class="date">Jun 2024 - Present</p>
                 </div>
-                <div class="research-item">
-                    <h3>Interest Area 3 (e.g., Patient Education)</h3>
-                    <p>You can also highlight other professional passions, such as improving patient outcomes through education, health policy, or medical ethics.</p>
+                <div class="timeline-item">
+                    <h3>Research Intern</h3>
+                    <h4>Ericsson</h4>
+                    <p class="date">Aug 2024 - Oct 2024 (3 months)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="container">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Master of Engineering (MEng), Graduate School of Engineering Science</h3>
+                    <h4>Yokohama National University</h4>
+                    <p class="date">Apr 2024 - Sep 2025</p>
+                    <p class="description">Honors: Award for Academic Excellence, 2024</p>
                 </div>
             </div>
         </section>
 
         <section id="publications" class="container">
-            <h2>Selected Publications</h2>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <p><strong>Title of the First Paper</strong></p>
-                    <p>Author List (e.g., <strong>Your Name</strong>, Co-author A, Co-author B)</p>
-                    <p><em>Journal of Medicine</em>, Vol. X, No. Y, pp. 123-456, 2025.</p>
-                    <p>
-                        <a href="#" class="pub-link">[Link]</a>
-                        <a href="#" class="pub-link">[PDF]</a>
-                        <a href="#" class="pub-link">[Code]</a>
-                    </p>
+            <h2>Publications</h2>
+            
+            <details class="collapsible-section">
+                <summary><h3>Journal (Peer-reviewed)</h3></summary>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <p><strong>Grover Adaptive Search with Spin Variables</strong></p>
+                        <p><strong>S Fujiwara</strong>, N Ishikawa</p>
+                        <p><em>IEEE Transactions on Quantum Engineering</em>, 2025.</p>
+                        <p><a href="#" class="pub-link">[Link]</a></p>
+                    </div>
+                    <div class="publication-item">
+                        <p><strong>A flexible polar decoding architecture with adjustable latency and reliability</strong></p>
+                        <p><strong>S Fujiwara</strong>, H Ochiai</p>
+                        <p><em>IEEE Open Journal of the Communications Society</em>, 2024.</p>
+                        <p><a href="https://ieeexplore.ieee.org/document/10452372" target="_blank" class="pub-link">[IEEE]</a></p>
+                    </div>
                 </div>
-                <div class="publication-item">
-                    <p><strong>Title of the Second Paper</strong></p>
-                    <p>Author List (e.g., Co-author A, <strong>Your Name</strong>, Co-author C)</p>
-                    <p><em>Clinical Practice Review</em>, 2024.</p>
-                     <p>
-                        <a href="#" class="pub-link">[Link]</a>
-                        <a href="#" class="pub-link">[PDF]</a>
-                    </p>
+            </details>
+
+            <details class="collapsible-section">
+                <summary><h3>Preprint</h3></summary>
+                <div class="publication-list">
+                    <div class="publication-item">
+                        <p><strong>Quantum speedup for polar maximum likelihood decoding</strong></p>
+                        <p><strong>S Fujiwara</strong>, N Ishikawa</p>
+                        <p><em>arXiv preprint arXiv:2411.04727</em>, 2024.</p>
+                        <p><a href="https://arxiv.org/abs/2411.04727" target="_blank" class="pub-link">[arXiv]</a></p>
+                    </div>
                 </div>
-                 <div class="publication-item">
-                    <p><strong>Title of the Third Paper</strong></p>
-                    <p>Author List (e.g., Co-author D, Co-author E, <strong>Your Name</strong>)</p>
-                    <p><em>Proceedings of the Annual Medical Conference</em>, 2023.</p>
-                     <p>
-                        <a href="#" class="pub-link">[Link]</a>
-                    </p>
-                </div>
-            </div>
+            </details>
+
         </section>
 
         <section id="contact" class="container">
             <h2>Contact</h2>
-            <p>Feel free to reach out for collaborations, consultations, or other inquiries.</p>
-            <p><strong>Email:</strong> your.email [at] example.com</p>
+            <p>Please feel free to get in touch for collaborations or other inquiries.</p>
+            <p><strong>Email:</strong> (Your verified email at ynu.jp)</p>
             <div class="social-links">
-                <a href="#">LinkedIn</a>
                 <a href="#">Google Scholar</a>
-                <a href="#">ResearchGate</a>
-                <a href="#">X (Twitter)</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Dr. Your Name. All Rights Reserved.</p>
+        <p>&copy; 2025 Shintaro Fujiwara. All Rights Reserved.</p>
     </footer>
 
 </body>

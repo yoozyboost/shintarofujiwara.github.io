@@ -174,38 +174,93 @@ section h2::after {
     text-align: center;
 }
 
-/* --- Interests Section --- */
-.research-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+/* --- Experience & Education Sections --- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
-.research-item {
-    background: var(--card-bg-color);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+.timeline-item {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 1.5rem;
 }
-.research-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+.timeline-item h3 {
+    margin: 0 0 0.1rem 0;
+    font-size: 1.2rem;
+}
+
+.timeline-item h4 {
+    margin: 0;
+    font-weight: bold;
+    font-family: var(--font-body);
+    color: #555;
+}
+
+.timeline-item .date {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.timeline-item .description {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
 }
 
 /* --- Publications Section --- */
+.collapsible-section {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+.collapsible-section summary {
+    cursor: pointer;
+    list-style: none; /* Remove default marker */
+}
+
+.collapsible-section summary::-webkit-details-marker {
+    display: none; /* Remove default marker for Chrome/Safari */
+}
+
+.collapsible-section summary h3 {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.collapsible-section summary::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+details[open] > summary::before {
+    transform: rotate(90deg);
+}
+
 .publication-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-.publication-item {
-    border-left: 4px solid var(--secondary-color);
+    margin-top: 1.5rem;
     padding-left: 1.5rem;
 }
+
+.publication-item {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 1.5rem;
+}
+
 .publication-item p {
     margin: 0.3rem 0;
 }
+
 .pub-link {
     margin-right: 1rem;
     font-weight: bold;
