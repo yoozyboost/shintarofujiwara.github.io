@@ -1,38 +1,117 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World!</title>
+    <title>Dr. Your Name, MD - Personal Website</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
-        <h1>Shintaro Fujiwara</h1>
-        <!-- <p>量子コンピュータ・通信分野の研究者</p> -->
+        <nav>
+            <div class="logo">
+                <h1><a href="#hero">Dr. Your Name</a></h1>
+            </div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="about">
-        <img src="images/profile.jpg" alt="プロフィール画像">
-        <p>Research</p>
-    </section>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <img src="profile.jpg" alt="Profile picture of Dr. Your Name" class="profile-pic">
+                <div class="hero-text">
+                    <h2>Dr. Your Name, MD, PhD</h2>
+                    <p>Physician, Department of [Your Specialty]</p>
+                    <p>[Your Hospital or Institution]</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="research">
-        <h2>Achievement</h2>
-        <ul>
-            <li><a href="https://scholar.google.com/">Google Scholar</a></li>
-            <li><a href="https://arxiv.org/">arXiv</a></li>
-        </ul>
-    </section>
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p>
+                Welcome to my personal page. I am a dedicated physician specializing in [Your Specialty]. My work focuses on providing compassionate patient care while also engaging in clinical research to advance the field. Here, you can find information about my clinical interests, research publications, and professional background.
+            </p>
+            <a href="cv.pdf" class="btn" target="_blank">View My CV (PDF)</a>
+        </section>
 
-    <section id="projects">
-        <h2>projects</h2>
-        <p>GitHub にアップロードした研究プロジェクトやコードの説明</p>
-    </section>
+        <section id="interests" class="container">
+            <h2>Clinical & Research Interests</h2>
+            <div class="research-grid">
+                <div class="research-item">
+                    <h3>Interest Area 1 (e.g., Cardiology)</h3>
+                    <p>A brief description of your primary clinical or research interest. You can discuss specific conditions, treatments, or research questions you are focused on.</p>
+                </div>
+                <div class="research-item">
+                    <h3>Interest Area 2 (e.g., Medical Technology)</h3>
+                    <p>Describe another area of your professional focus. This could be a sub-specialty, a particular patient population, or an interest in new medical technologies.</p>
+                </div>
+                <div class="research-item">
+                    <h3>Interest Area 3 (e.g., Patient Education)</h3>
+                    <p>You can also highlight other professional passions, such as improving patient outcomes through education, health policy, or medical ethics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="container">
+            <h2>Selected Publications</h2>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <p><strong>Title of the First Paper</strong></p>
+                    <p>Author List (e.g., <strong>Your Name</strong>, Co-author A, Co-author B)</p>
+                    <p><em>Journal of Medicine</em>, Vol. X, No. Y, pp. 123-456, 2025.</p>
+                    <p>
+                        <a href="#" class="pub-link">[Link]</a>
+                        <a href="#" class="pub-link">[PDF]</a>
+                        <a href="#" class="pub-link">[Code]</a>
+                    </p>
+                </div>
+                <div class="publication-item">
+                    <p><strong>Title of the Second Paper</strong></p>
+                    <p>Author List (e.g., Co-author A, <strong>Your Name</strong>, Co-author C)</p>
+                    <p><em>Clinical Practice Review</em>, 2024.</p>
+                     <p>
+                        <a href="#" class="pub-link">[Link]</a>
+                        <a href="#" class="pub-link">[PDF]</a>
+                    </p>
+                </div>
+                 <div class="publication-item">
+                    <p><strong>Title of the Third Paper</strong></p>
+                    <p>Author List (e.g., Co-author D, Co-author E, <strong>Your Name</strong>)</p>
+                    <p><em>Proceedings of the Annual Medical Conference</em>, 2023.</p>
+                     <p>
+                        <a href="#" class="pub-link">[Link]</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Contact</h2>
+            <p>Feel free to reach out for collaborations, consultations, or other inquiries.</p>
+            <p><strong>Email:</strong> your.email [at] example.com</p>
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Google Scholar</a>
+                <a href="#">ResearchGate</a>
+                <a href="#">X (Twitter)</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Shintaro Fujiwara</p>
+        <p>&copy; 2025 Dr. Your Name. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
