@@ -3,40 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Researcher</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shintaro Fujiwara - Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Styling */
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            /* MODIFICATION: Brightened the default text color for better contrast */
+            color: #f0f0f0; /* Was #e0e0e0 */
+            background-color: #000000;
+            line-height: 1.7;
+            overflow-x: hidden;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+        }
+        #webgl-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
+        }
+        .content {
+            position: relative; z-index: 1; max-width: 800px; margin: 4rem auto; padding: 2.5rem;
+            background-color: rgba(10, 10, 20, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        h1, h2 {
+            color: #ffffff; font-weight: 400; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 0.5rem;
+        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        /* MODIFICATION: Also slightly brightened this secondary text */
+        header p { font-size: 1.2rem; color: #b0b0b0; margin-top: 0; } /* Was #a0a0a0 */
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 1rem; }
+        a { color: #87CEFA; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-
-    <div class="ambient-background">
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
-        <div class="blob blob3"></div>
-    </div>
+    
+    <canvas id="webgl-canvas"></canvas>
 
     <div class="content">
         <header>
-            <h1>Your Name</h1>
-            <p>University / Institution</p>
+            <h1>Shintaro Fujiwara</h1>
+            <p>Ph.D. Candidate, Graduate School of Engineering Science, Yokohama National University</p>
         </header>
-
+        
         <section>
             <h2>About Me</h2>
-            <p>Here you can write a brief introduction about yourself and your research interests. Focus on your field of study, your passion for the subject, and your academic goals.</p>
+            <p>
+                Member of Ishikawa Lab. My research interests include:
+            </p>
+            <ul>
+                <li>Quantum Computing & Algorithms</li>
+                <li>Wireless Communications</li>
+                <li>Error-Correcting Codes</li>
+            </ul>
         </section>
 
         <section>
-            <h2>Publications</h2>
-            <ul>
-                <li>Paper Title 1, Journal Name, Year</li>
-                <li>Paper Title 2, Journal Name, Year</li>
-                <li>Paper Title 3, Journal Name, Year</li>
-            </ul>
+            <h2>Publications (Peer-Reviewed)</h2>
+            <ol>
+                <li>S. Fujiwara and H. Ochiai, "A Flexible Polar Decoding Architecture With Adjustable Latency and Reliability," in <i>IEEE Open Journal of the Communications Society</i>, vol. 5, pp. 951-964, 2024, <a href="https://doi.org/10.1109/OJCOMS.2024.3358054" target="_blank">doi: 10.1109/OJCOMS.2024.3358054</a>.</li>
+                <li>S. Fujiwara and N. Ishikawa, "Grover Adaptive Search With Spin Variables," in <i>IEEE Transactions on Quantum Engineering</i>, vol. 6, pp. 1-13, 2025, Art no. 3102013, <a href="https://doi.org/10.1109/TQE.2025.3595910" target="_blank">doi: 10.1109/TQE.2025.3595910</a>.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Preprints</h2>
+            <ol>
+                <li>Shintaro Fujiwara, Naoki Ishikawa, "Quantum Speedup for Polar Maximum Likelihood Decoding," arXiv preprint, <a href="https://arxiv.org/abs/2411.04727" target="_blank">arXiv:2411.04727</a>, 2024.</li>
+                <li>Taku Mikuriya, Kein Yukiyoshi, Shintaro Fujiwara, Giuseppe Thadeu Freitas de Abreu, Naoki Ishikawa, "Quantum Speedup for the Quadratic Assignment Problem," arXiv preprint, <a href="https://arxiv.org/abs/2410.12181" target="_blank">arXiv:2410.12181</a>, 2024.</li>
+            </ol>
         </section>
         
+        <section>
+            <h2>Other Presentations</h2>
+            <ol>
+                <li>S. Fujiwara, P. V. Klaine, C. Li, A. Lahuerta-Lavieja, K. K. Nagalapur, S. Muruganathan, S. Malomsoky, and N. Ishikawa, “Enhancing Single-Link Initial Throughput via Early-CSI Feedback within Random Access Procedure,” IEICE Technical Committee on Radio Communication Systems (RCS), Gifu, Japan, April 17, 2025.</li>
+                <li>藤原進太郎, 落合秀樹, “所望の復号遅延と信頼性を実現する Polar 符号化方式の設計,” 次世代無線通信技術イノベーション創生コンソーシアム, 東京, 2025 年 3 月 19 日 （ポスター).</li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Funding</h2>
+            <ol>
+                <li>独立行政法人情報処理推進機構(IPA) 2025 年度未踏ターゲット事業（量子コンピューティング技術を活用したソフトウェア開発分野）,量子信号処理を活用した大規模組合せ最適化手法の開発 (Development of Large-Scale Combinatorial Optimization Methods Using Quantum Signal Processing). 
+                <br><b>(採択金額: 396万円 / Amount: JPY 3.96 million)</b> 
+                [<a href="https://www.ipa.go.jp/jinzai/mitou/target/2025/gaiyou-yn-2.html" target="_blank">Source</a>]
+                </li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Work Experience</h2>
+            <ol>
+                <li>Ericsson Japan, GFTL ER Radio S&R Research Lab Japan Division (Research Intern), August 1, 2024 - October 31, 2024.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Contact & Links</h2>
+            <ul>
+                <li><b>Email:</b> <a href="mailto:fujiwara-shintaro-by@ynu.jp">fujiwara-shintaro-by@ynu.jp</a></li>
+                <li><b>GitHub:</b> <a href="https://github.com/yoozyboost" target="_blank">yoozyboost</a></li>
+                <li><b>Google Scholar:</b> <a href="https://scholar.google.com/citations?user=aDoOhjcAAAAJ&hl=ja" target="_blank">Profile</a></li>
+                <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/feed/" target="_blank">Profile</a></li>
+                <li><b>Lab Website:</b> <a href="https://ishikawalab.ynu.ac.jp/" target="_blank">Ishikawa Lab</a></li>
+            </ul>
+        </section>
+
     </div>
+    
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        attribute vec2 a_position;
+        void main() {
+            gl_Position = vec4(a_position, 0.0, 1.0);
+        }
+    </script>
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        precision highp float;
+        uniform vec2 u_resolution;
+        uniform float u_time;
+        float random (vec2 st) { return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123); }
+        float noise (vec2 st) {
+            vec2 i = floor(st); vec2 f = fract(st);
+            float a = random(i); float b = random(i + vec2(1.0, 0.0));
+            float c = random(i + vec2(0.0, 1.0)); float d = random(i + vec2(1.0, 1.0));
+            vec2 u = f*f*(3.0-2.0*f);
+            return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+        }
+        void main() {
+            vec2 st = gl_FragCoord.xy / u_resolution.xy;
+            st.x *= u_resolution.x / u_resolution.y;
+            float n = 0.0;
+            n = noise(st * 0.7 + u_time * 0.07);
+            n += noise(st * 1.5 - u_time * 0.1) * 0.5;
+            n += noise(st * 3.0 + u_time * 0.03) * 0.4;
+            n += noise(st * 6.0 - u_time * 0.05) * 0.2;
+            n /= (1.0 + 0.5 + 0.4 + 0.2);
+            vec3 darkColor = vec3(0.0, 0.2, 0.4);
+            vec3 brightColor = vec3(0.45, 0.75, 0.85);
+            vec3 lightColor = mix(darkColor, brightColor, n);
+            float intensity = smoothstep(0.3, 0.6, n);
+            float maxBrightness = 0.8;
+            vec3 finalColor = lightColor * intensity * maxBrightness;
+            gl_FragColor = vec4(finalColor, 1.0);
+        }
+    </script>
+    
+    <script type="text/javascript">
+        // JavaScript to run the WebGL animation
+        const canvas = document.getElementById('webgl-canvas');
+        const gl = canvas.getContext('webgl');
+        if (!gl) { console.error("WebGL not supported!"); }
+        const vsSource = document.getElementById('vertex-shader').textContent;
+        const fsSource = document.getElementById('fragment-shader').textContent;
+        const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+        const programInfo = { program: shaderProgram, attribLocations: { vertexPosition: gl.getAttribLocation(shaderProgram, 'a_position'), }, uniformLocations: { resolution: gl.getUniformLocation(shaderProgram, 'u_resolution'), time: gl.getUniformLocation(shaderProgram, 'u_time'), }, };
+        const buffer = initBuffers(gl);
+        function render(time) { time *= 0.001; resizeCanvasToDisplaySize(gl.canvas); gl.viewport(0, 0, gl.canvas.width, gl.canvas.height); gl.clearColor(0.0, 0.0, 0.0, 1.0); gl.clear(gl.COLOR_BUFFER_BIT); gl.useProgram(programInfo.program); gl.bindBuffer(gl.ARRAY_BUFFER, buffer); gl.vertexAttribPointer(programInfo.attribLocations.vertexPosition, 2, gl.FLOAT, false, 0, 0); gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition); gl.uniform2f(programInfo.uniformLocations.resolution, gl.canvas.width, gl.canvas.height); gl.uniform1f(programInfo.uniformLocations.time, time); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); requestAnimationFrame(render); }
+        requestAnimationFrame(render);
+        function initShaderProgram(gl, vsSource, fsSource) { const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource); const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource); const shaderProgram = gl.createProgram(); gl.attachShader(shaderProgram, vertexShader); gl.attachShader(shaderProgram, fragmentShader); gl.linkProgram(shaderProgram); if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) { alert('Unable to initialize the shader program: ' + gl.getProgramInfoLog(shaderProgram)); return null; } return shaderProgram; }
+        function loadShader(gl, type, source) { const shader = gl.createShader(type); gl.shaderSource(shader, source); gl.compileShader(shader); if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) { alert('An error occurred compiling the shaders: ' + gl.getShaderInfoLog(shader)); gl.deleteShader(shader); return null; } return shader; }
+        function initBuffers(gl) { const positionBuffer = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer); const positions = [-1.0, 1.0, 1.0, 1.0, -1.0, -1.0, 1.0, -1.0]; gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW); return positionBuffer; }
+        function resizeCanvasToDisplaySize(canvas) { const displayWidth  = canvas.clientWidth; const displayHeight = canvas.clientHeight; if (canvas.width !== displayWidth || canvas.height !== displayHeight) { canvas.width  = displayWidth; canvas.height = displayHeight; return true; } return false; }
+    </script>
 </body>
 </html>
