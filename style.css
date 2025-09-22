@@ -34,23 +34,23 @@ body {
     animation-iteration-count: infinite;
 }
 
-/* 1つ目の色（ピンク系） */
+/* 1つ目の色（ピンク系）の透明度を調整 (0.5 -> 0.8) */
 .animated-background::before {
-    background: radial-gradient(circle, hsla(320, 80%, 70%, 0.5), transparent 40%);
+    background: radial-gradient(circle, hsla(320, 80%, 70%, 0.8), transparent 40%);
     animation-name: move-blob-1;
     animation-duration: 40s;
 }
 
-/* 2つ目の色（青系） */
+/* 2つ目の色（青系）の透明度を調整 (0.6 -> 0.9) */
 .animated-background::after {
-    background: radial-gradient(circle, hsla(200, 80%, 75%, 0.6), transparent 45%);
+    background: radial-gradient(circle, hsla(200, 80%, 75%, 0.9), transparent 45%);
     animation-name: move-blob-2;
     animation-duration: 35s;
 }
 
-/* 3つ目の色（黄色系） */
+/* 3つ目の色（黄色系）の透明度を調整 (0.4 -> 0.7) */
 .animated-background {
-     background: radial-gradient(circle, hsla(60, 80%, 70%, 0.4), transparent 50%);
+     background: radial-gradient(circle, hsla(60, 80%, 70%, 0.7), transparent 50%);
      animation-name: move-blob-3;
      animation-duration: 45s;
 }
