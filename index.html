@@ -1,135 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shintaro Fujiwara - Personal Website</title>
+    <title>Your Name - Researcher</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="animated-background"></div>
+    <div class="content">
+        <header>
+            <h1>あなたの名前</h1>
+            <p>所属大学・機関名</p>
+        </header>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <h1><a href="#hero">Shintaro Fujiwara</a></h1>
-            </div>
+        <section>
+            <h2>自己紹介</h2>
+            <p>ここにあなたのプロフィールや研究分野についての説明を記述します。専門分野、研究への情熱、そして目指している目標などを簡潔にまとめると良いでしょう。</p>
+        </section>
+
+        <section>
+            <h2>研究業績</h2>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>論文タイトル1, 雑誌名, 出版年</li>
+                <li>論文タイトル2, 雑誌名, 出版年</li>
+                <li>論文タイトル3, 雑誌名, 出版年</li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="hero-content">
-                <img src="profile.jpg" alt="Profile picture of Shintaro Fujiwara" class="profile-pic">
-                <div class="hero-text">
-                    <h2>Shintaro Fujiwara</h2>
-                    <p>Graduate School of Engineering</p>
-                    <p>Yokohama National University</p>
-                </div>
-            </div>
         </section>
-
-        <section id="about" class="container">
-            <h2>About Me</h2>
-            <p>
-                I am a researcher at Yokohama National University. My work is at the intersection of information theory and quantum physics, with a primary focus on wireless communication, coding theory, and the development of novel quantum computation algorithms.
-            </p>
-            <a href="cv.pdf" class="btn" target="_blank">View My CV (PDF)</a>
-        </section>
-
-        <section id="experience" class="container">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>MITOU Target Program</h3>
-                    <h4>Information-technology Promotion Agency, Japan (IPA)</h4>
-                    <p class="date">Jun 2025 - Present</p>
-                    <p class="description">Project: "Development of large-scale combinatorial optimization methods using quantum signal processing"</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Technical Assistant</h3>
-                    <h4>Yokohama National University</h4>
-                    <p class="date">Jun 2024 - Present</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Research Intern</h3>
-                    <h4>Ericsson</h4>
-                    <p class="date">Aug 2024 - Oct 2024 (3 months)</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="container">
-            <h2>Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Master of Engineering (MEng), Graduate School of Engineering Science</h3>
-                    <h4>Yokohama National University</h4>
-                    <p class="date">Apr 2024 - Sep 2025</p>
-                    <p class="description">Honors: Award for Academic Excellence, 2024</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="container">
-            <h2>Publications</h2>
-            
-            <details class="collapsible-section">
-                <summary><h3>Journal (Peer-reviewed)</h3></summary>
-                <div class="publication-list">
-                    <div class="publication-item">
-                        <p><strong>Grover Adaptive Search with Spin Variables</strong></p>
-                        <p><strong>S Fujiwara</strong>, N Ishikawa</p>
-                        <p><em>IEEE Transactions on Quantum Engineering</em>, 2025.</p>
-                        <p><a href="#" class="pub-link">[Link]</a></p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>A flexible polar decoding architecture with adjustable latency and reliability</strong></p>
-                        <p><strong>S Fujiwara</strong>, H Ochiai</p>
-                        <p><em>IEEE Open Journal of the Communications Society</em>, 2024.</p>
-                        <p><a href="https://ieeexplore.ieee.org/document/10452372" target="_blank" class="pub-link">[IEEE]</a></p>
-                    </div>
-                </div>
-            </details>
-
-            <details class="collapsible-section">
-                <summary><h3>Preprint</h3></summary>
-                <div class="publication-list">
-                    <div class="publication-item">
-                        <p><strong>Quantum speedup for polar maximum likelihood decoding</strong></p>
-                        <p><strong>S Fujiwara</strong>, N Ishikawa</p>
-                        <p><em>arXiv preprint arXiv:2411.04727</em>, 2024.</p>
-                        <p><a href="https://arxiv.org/abs/2411.04727" target="_blank" class="pub-link">[arXiv]</a></p>
-                    </div>
-                </div>
-            </details>
-
-        </section>
-
-        <section id="contact" class="container">
-            <h2>Contact</h2>
-            <p>Please feel free to get in touch for collaborations or other inquiries.</p>
-            <p><strong>Email:</strong> (Your verified email at ynu.jp)</p>
-            <div class="social-links">
-                <a href="#">Google Scholar</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Shintaro Fujiwara. All Rights Reserved.</p>
-    </footer>
-
+        
+    </div>
 </body>
 </html>
