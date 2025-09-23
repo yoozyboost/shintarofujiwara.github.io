@@ -42,6 +42,53 @@
             /* MODIFICATION 2: Increased border opacity to make it more pronounced */
             border: 1.2px solid rgba(255, 255, 255, 0.13);
         }
+        .content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: rgba(10, 10, 20, 0.2);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 16px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6),
+                inset 0 1px 2px rgba(255,255,255,0.25);
+    overflow: hidden; /* ハイライトがはみ出ないように */
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg, 
+        rgba(255,255,255,0.25) 0%, 
+        rgba(255,255,255,0.05) 40%, 
+        transparent 60%
+    );
+    transform: rotate(15deg);
+    pointer-events: none;
+    /* animation: shineMove 12s linear infinite; */
+    
+}
+
+/* @keyframes shineMove {
+    from { transform: translateX(-50%) rotate(15deg); }
+    to   { transform: translateX(50%) rotate(15deg); }
+} */
+
+.content {
+    box-shadow: 
+        0 8px 30px rgba(0,0,0,0.6),
+        inset 0 0 30px rgba(255,255,255,0.08),
+        0 0 20px rgba(0,200,255,0.25); /* 青系の発光 */
+}
+
         h1, h2 {
             font-family: 'Inter', sans-serif;
             color:#e0e0e0; 
@@ -50,7 +97,8 @@
             padding-bottom: 0.5rem;
             letter-spacing: 0.5px;
             /* MODIFICATION 1: Added a subtle shadow for a 3D effect */
-            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+            /* text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7); */
+            text-shadow:0 2px 6px rgba(0,0,0,0.7), 0 0 8px rgba(255,255,255,0.2);
         }
         h1 { 
             word-break: break-word;
