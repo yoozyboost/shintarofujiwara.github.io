@@ -2,175 +2,463 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shintaro Fujiwara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shintaro Fujiwara - Research Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Styling */
+        /* --- System Style: Windows Vista Aero Glass --- */
+        :root {
+            --glass-base: rgba(15, 25, 30, 0.75);
+            --glass-border-light: rgba(255, 255, 255, 0.4);
+            --glass-border-dark: rgba(0, 0, 0, 0.3);
+            --aero-blue: #005070;
+        }
+
+        /* すべての要素でSegoe UIを強制 */
+        * {
+            font-family: 'Segoe UI', 'Meiryo', 'Noto Sans JP', sans-serif !important;
+        }
+
         body {
             margin: 0;
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            font-weight: 300;
-            color: #f0f0f0; 
-            background-color: #000000;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            color: #333;
             
-            /* --- ここを変更 --- */
-            /* 中心から広がる形をやめ、斜めのグラデーションに変更 */
-            background-image: linear-gradient(0deg, 
-                #001e29 0%);
-            /* --- ここまで --- */
-
-            line-height: 1.7;
-            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+            /* 文字間隔を全体的に少し狭くする */
+            letter-spacing: -0.3px;
+            
+            /* 背景: さらに明るく、鮮やかさを加えたオーロラ (静止画) */
+            background: radial-gradient(circle at 50% 120%, #0090a0 0%, #004045 60%, #000000 100%);
         }
-        
-        .content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2.5rem;
-            background: rgba(10, 10, 20, 0.2);
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            border-radius: 16px;
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
+
+        /* --- Desktop Window Container --- */
+        .desktop-window {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1000px;
+            height: 85vh;
+            
+            /* Aero Glass Effect */
+            background: linear-gradient(180deg, rgba(60, 75, 85, 0.9) 0%, rgba(40, 50, 55, 0.85) 100%);
+            backdrop-filter: blur(20px) saturate(130%);
+            -webkit-backdrop-filter: blur(20px) saturate(130%);
+            
+            border-radius: 12px;
+            
+            /* 立体的なフチ */
+            border: 1px solid rgba(180, 220, 230, 0.5);
             box-shadow: 
-                0 8px 30px rgba(0,0,0,0.6),
-                inset 0 0 30px rgba(255,255,255,0.08),
-                0 0 20px rgba(0,200,255,0.25);
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                inset 1px 0 0 rgba(255, 255, 255, 0.2),
+                inset -1px 0 0 rgba(255, 255, 255, 0.2),
+                0 0 0 1px rgba(0, 0, 0, 0.4),
+                0 30px 60px rgba(0, 0, 0, 0.6);
+            
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
             overflow: hidden;
         }
 
-        h1, h2 {
-            font-family: 'Inter', sans-serif;
-            color:#e0e0e0; 
-            font-weight: 600;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-            padding-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-            text-shadow:0 2px 6px rgba(0,0,0,0.7), 0 0 8px rgba(255,255,255,0.2);
+        /* --- Title Bar --- */
+        .title-bar {
+            height: 34px;
+            background: linear-gradient(to bottom, 
+                rgba(255,255,255,0.18) 0%, 
+                rgba(255,255,255,0.08) 45%, 
+                rgba(255,255,255,0.0) 50%, 
+                rgba(255,255,255,0.08) 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.25);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.15);
+            flex-shrink: 0;
         }
-        h1 { 
-            word-break: break-word;
-            font-size: 3rem;
-            margin-bottom: 0.5rem; 
-        }
-        header p { 
-            font-size: 1.1rem; 
-            color: #b0b0b0; 
-            margin-top: 0; 
-            font-weight: 400;
-        }
-        ul, ol { padding-left: 20px; }
-        li { 
-            margin-bottom: 1rem; 
-            color: #f0f0f0;
-        }
-        a { color: #87CEFA; text-decoration: none; transition: color 0.3s ease; }
-        a:hover { color: #ffffff; text-decoration: underline; }
 
+        .window-title {
+            font-size: 13px;
+            color: #f0f0f0;
+            text-shadow: none; 
+            margin-left: 8px;
+            flex-grow: 1;
+            font-weight: 400;
+            letter-spacing: 0.2px; /* タイトルだけは読みやすさ重視で少し広めに */
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .control-btn {
+            width: 32px; height: 20px;
+            border-radius: 4px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(255,255,255,0.15));
+            border: 1px solid rgba(0,0,0,0.35);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+        .control-btn.close { 
+            background: linear-gradient(to bottom, #f07070, #c04040);
+            border-color: #8a2a2a;
+            box-shadow: inset 0 1px 0 rgba(255,150,150,0.4);
+        }
+
+        /* --- Navigation Bar --- */
+        .nav-bar {
+            padding: 10px 15px;
+            background: linear-gradient(to bottom, #f4f8fc 0%, #dce6f2 100%);
+            border-bottom: 1px solid #99aabb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .nav-btn {
+            padding: 5px 16px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1e1e1e;
+            
+            background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 48%, #dedede 50%, #e8e8e8 100%);
+            border: 1px solid #707070;
+            box-shadow: inset 0 1px 0 #ffffff, 0 1px 2px rgba(0,0,0,0.1);
+            
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.1s;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: linear-gradient(to bottom, #eefaff 0%, #e0f4fc 48%, #bde6fd 50%, #d0effc 100%);
+            border-color: #3c7fb1;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 0 2px rgba(60, 127, 177, 0.3);
+        }
+
+        /* --- Window Body --- */
+        .window-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            background: #ffffff;
+            position: relative;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 240px;
+            background: linear-gradient(to right, #f1f5fb 0%, #e3e9f3 100%);
+            border-right: 1px solid #b0bccc;
+            box-shadow: 1px 0 5px rgba(0,0,0,0.08);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .profile-pic-frame {
+            width: 120px; height: 120px;
+            padding: 5px;
+            background: #fff;
+            border: 1px solid #a9b8c9;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+        }
+
+        .profile-pic {
+            width: 100%; height: 100%;
+            background-color: #ddd;
+            background-image: url('myimage.jpeg'); /* 画像パスは適宜変更してください */
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ccc;
+        }
+
+        .sidebar h1 {
+            font-size: 19px; margin: 10px 0 5px 0;
+            color: #004488;
+            text-shadow: 0 1px 0 #fff;
+        }
+        .sidebar p {
+            font-size: 12px; color: #555; margin: 0; line-height: 1.4;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .social-btn {
+            font-size: 11px;
+            padding: 3px 10px;
+            border: 1px solid #999;
+            background: linear-gradient(to bottom, #fff 0%, #e6e6e6 100%);
+            color: #444;
+            text-decoration: none;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        }
+        .social-btn:hover {
+            border-color: #0066cc;
+            background: linear-gradient(to bottom, #fff 0%, #dcecff 100%);
+            color: #000;
+        }
+
+        /* Content Area */
+        .main-view {
+            flex-grow: 1;
+            padding: 35px 45px;
+            overflow-y: auto;
+            background: #fff;
+            box-shadow: inset 5px 0 10px rgba(0,0,0,0.03);
+        }
+
+        section {
+            margin-bottom: 45px;
+        }
+
+        /* 小見出し (H2) のデザイン変更: 青色に戻し、シンプルな下線 */
+        h2 {
+            font-size: 20px;
+            color: #004d99; /* Vistaブルーに戻す */
+            border-bottom: 1px solid #b0c4de; /* シンプルで細い線（少し青みのあるグレー） */
+            padding-bottom: 6px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-image: none;
+        }
+
+        ul, ol { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 8px; font-size: 14px; line-height: 1.6; color: #333; }
+        
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- Footer Status Bar --- */
+        .status-bar {
+            height: 24px;
+            background: #f0f0f0;
+            border-top: 1px solid #c0c0c0;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 11px;
+            color: #666;
+            flex-shrink: 0;
+            box-shadow: inset 0 1px 0 #fff;
+        }
+
+        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
-            .content {
-                margin: 2rem 1rem;
-                padding: 1.5rem;
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
+            body {
+                background: #101518;
+                height: auto;
+                overflow-y: auto;
             }
-            h1 {
-                font-size: 2.0rem;
+            
+            .desktop-window {
+                position: static;
+                transform: none;
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
             }
-            header p {
-                font-size: 1.0rem;
+
+            .window-body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                padding: 20px;
+                box-sizing: border-box;
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+                justify-content: flex-start;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .profile-pic-frame {
+                width: 70px; height: 70px; margin: 0;
+            }
+            
+            .sidebar div:nth-child(2) {
+                text-align: left;
+                margin-top: 5px;
+            }
+            
+            .social-links {
+                display: flex;
+                margin-top: 8px;
+                justify-content: flex-start;
+            }
+
+            .nav-bar {
+                padding: 10px;
+                overflow-x: auto;
+                gap: 8px;
+                background: #eef3f8;
+            }
+            .nav-btn {
+                padding: 6px 12px;
+            }
+
+            .main-view {
+                padding: 20px;
+                overflow-y: visible;
             }
         }
     </style>
 </head>
 <body>
-    
-    <div class="content">
-        <header>
-            <h1>Shintaro Fujiwara</h1>
-            <p>Ph.D. Candidate, Graduate School of Engineering Science, Yokohama National University</p>
-        </header>
-        
-        <section>
-            <h2>About Me</h2>
-            <p>
-                Member of Ishikawa Lab. My research interests include:
-            </p>
-            <ul>
-                <li>Quantum Computing & Algorithms</li>
-                <li>Wireless Communications</li>
-                <li>Error-Correcting Codes</li>
-            </ul>
-        </section>
 
-        <section>
-            <h2>Publications</h2>
-            <ol>
-                <li>S. Fujiwara and H. Ochiai, "A Flexible Polar Decoding Architecture With Adjustable Latency and Reliability," in <i>IEEE Open Journal of the Communications Society</i>, vol. 5, pp. 951-964, 2024, <a href="https://doi.org/10.1109/OJCOMS.2024.3358054" target="_blank">doi: 10.1109/OJCOMS.2024.3358054</a>.</li>
-                <li>S. Fujiwara and N. Ishikawa, "Grover Adaptive Search With Spin Variables," in <i>IEEE Transactions on Quantum Engineering</i>, vol. 6, pp. 1-13, 2025, Art no. 3102013, <a href="https://doi.org/10.1109/TQE.2025.3595910" target="_blank">doi: 10.1109/TQE.2025.3595910</a>.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Preprints</h2>
-            <ol>
-                <li>Shintaro Fujiwara, Naoki Ishikawa, "Quantum Speedup for Polar Maximum Likelihood Decoding," arXiv preprint, <a href="https://arxiv.org/abs/2411.04727" target="_blank">arXiv:2411.04727</a>, 2024.</li>
-                <li>Taku Mikuriya, Kein Yukiyoshi, Shintaro Fujiwara, Giuseppe Thadeu Freitas de Abreu, Naoki Ishikawa, "Quantum Speedup for the Quadratic Assignment Problem," arXiv preprint, <a href="https://arxiv.org/abs/2410.12181" target="_blank">arXiv:2410.12181</a>, 2024.</li>
-            </ol>
-        </section>
+    <div class="desktop-window">
         
-        <section>
-            <h2>Other Presentations</h2>
-            <ol>
-                <li>S. Fujiwara, P. V. Klaine, C. Li, A. Lahuerta-Lavieja, K. K. Nagalapur, S. Muruganathan, S. Malomsoky, and N. Ishikawa, “Enhancing Single-Link Initial Throughput via Early-CSI Feedback within Random Access Procedure,” IEICE Technical Committee on Radio Communication Systems (RCS), Gifu, Japan, April 17, 2025.</li>
-                <li>藤原進太郎, 落合秀樹, “所望の復号遅延と信頼性を実現する Polar 符号化方式の設計,” 次世代無線通信技術イノベーション創生コンソーシアム, 東京, 2025 年 3 月 19 日 （ポスター).</li>
-            </ol>
-        </section>
-        
-        <section>
-            <h2>Funding</h2>
-            <ol>
-                <li>独立行政法人情報処理推進機構(IPA) 2025 年度未踏ターゲット事業（量子コンピューティング技術を活用したソフトウェア開発分野）,量子信号処理を活用した大規模組合せ最適化手法の開発 (Development of Large-Scale Combinatorial Optimization Methods Using Quantum Signal Processing). 
-                <br><b>(採択金額: 396万円 / Amount: JPY 3.96 million)</b> 
-                [<a href="https://www.ipa.go.jp/jinzai/mitou/target/2025/gaiyou-yn-2.html" target="_blank">Source</a>]
-                </li>
-            </ol>
-        </section>
+        <div class="title-bar">
+            <span style="font-size:14px; margin-right:6px; opacity:0.9; filter: drop-shadow(0 0 1px rgba(100,200,255,0.4));">💎</span>
+            <div class="window-title">Shintaro Fujiwara - Research Portfolio</div>
+            <div class="window-controls">
+                <div class="control-btn"></div>
+                <div class="control-btn"></div>
+                <div class="control-btn close"></div>
+            </div>
+        </div>
 
-        <section>
-            <h2>Education</h2>
-            <ol>
-                <li>Bachelor's Degree in Electrical and Computer Engineering, Yokohama National University, April, 2018 - March, 2024.</li>
-                <li>Master's Degree in Electrical and Computer Engineering, Yokohama National University, April, 2024 - September, 2025.</li>
-                <li>Ph.D. Candidate in Electrical and Computer Engineering, Yokohama National University, October, 2025 - Present.</li>
-            </ol>
-        </section>
-        
-        <section>
-            <h2>Work Experience</h2>
-            <ol>
-                <li>Ericsson Japan, GFTL ER Radio S&R Research Lab Japan Division (Research Intern), August 1, 2024 - October 31, 2024.</li>
-            </ol>
-        </section>
+        <div class="nav-bar">
+            <a href="#about" class="nav-btn active">About Me</a>
+            <a href="#publications" class="nav-btn">Publications</a>
+            <a href="#preprints" class="nav-btn">Preprints</a>
+            <a href="#funding" class="nav-btn">Funding</a>
+        </div>
 
-        <section>
-            <h2>Contact & Links</h2>
-            <ul>
-                <li><b>Email:</b> <a href="mailto:fujiwara-shintaro-by@ynu.jp">fujiwara-shintaro-by@ynu.jp</a></li>
-                <li><b>GitHub:</b> <a href="https://github.com/yoozyboost" target="_blank">yoozyboost</a></li>
-                <li><b>Google Scholar:</b> <a href="https://scholar.google.com/citations?user=aDoOhjcAAAAJ&hl=ja" target="_blank">Profile</a></li>
-                <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/feed/" target="_blank">Profile</a></li>
-                <li><b>Lab Website:</b> <a href="https://ishikawalab.ynu.ac.jp/" target="_blank">Ishikawa Lab</a></li>
-            </ul>
-        </section>
+        <div class="window-body">
+            
+            <div class="sidebar">
+                <div class="profile-pic-frame">
+                    <div class="profile-pic"></div>
+                </div>
+                <div>
+                    <h1>Shintaro Fujiwara</h1>
+                    <p>Ph.D. Candidate<br>Yokohama National University</p>
+                    <p style="font-size: 11px; color: #777; margin-top:5px;">Ishikawa Lab</p>
+                    
+                    <div class="social-links">
+                        <a href="mailto:fujiwara-shintaro-by@ynu.jp" class="social-btn">Email</a>
+                        <a href="https://github.com/yoozyboost" target="_blank" class="social-btn">GitHub</a>
+                        <a href="https://scholar.google.com/citations?user=aDoOhjcAAAAJ&hl=ja" target="_blank" class="social-btn">Scholar</a>
+                        <a href="https://www.linkedin.com/in/shintaro-fujiwara-b2770a248/" target="_blank" class="social-btn">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-view">
+                
+                <section id="about">
+                    <h2>About Me</h2>
+                    <p>Member of Ishikawa Lab. My research interests include:</p>
+                    <ul>
+                        <li>Quantum Computing & Algorithms</li>
+                        <li>Wireless Communications</li>
+                        <li>Error-Correcting Codes</li>
+                    </ul>
+                </section>
+
+                <section id="publications">
+                    <h2>Publications</h2>
+                    <ol>
+                        <li><b>S. Fujiwara</b> and H. Ochiai, "A Flexible Polar Decoding Architecture With Adjustable Latency and Reliability," in <i>IEEE Open Journal of the Communications Society</i>, vol. 5, pp. 951-964, 2024, <a href="https://doi.org/10.1109/OJCOMS.2024.3358054" target="_blank">doi: 10.1109/OJCOMS.2024.3358054</a>.</li>
+                        <li><b>S. Fujiwara</b> and N. Ishikawa, "Grover Adaptive Search With Spin Variables," in <i>IEEE Transactions on Quantum Engineering</i>, vol. 6, pp. 1-13, 2025, Art no. 3102013, <a href="https://doi.org/10.1109/TQE.2025.3595910" target="_blank">doi: 10.1109/TQE.2025.3595910</a>.</li>
+                    </ol>
+                </section>
+
+                <section id="preprints">
+                    <h2>Preprints</h2>
+                    <ol>
+                        <li><b>S. Fujiwara</b>, N. Ishikawa, "Quantum Speedup for Polar Maximum Likelihood Decoding," arXiv preprint, <a href="https://arxiv.org/abs/2411.04727" target="_blank">arXiv:2411.04727</a>, 2024.</li>
+                        <li>T. Mikuriya, K. Yukiyoshi, <b>S. Fujiwara</b>, GTF. de Abreu, N. Ishikawa, "Quantum Speedup for the Quadratic Assignment Problem," arXiv preprint, <a href="https://arxiv.org/abs/2410.12181" target="_blank">arXiv:2410.12181</a>, 2024.</li>
+                    </ol>
+                </section>
+
+                <section id="presentations">
+                    <h2>Other Presentations</h2>
+                    <ol>
+                        <li><b>S. Fujiwara</b>, P. V. Klaine, C. Li, A. Lahuerta-Lavieja, K. K. Nagalapur, S. Muruganathan, S. Malomsoky, and N. Ishikawa, “Enhancing Single-Link Initial Throughput via Early-CSI Feedback within Random Access Procedure,” IEICE Technical Committee on Radio Communication Systems (RCS), Gifu, Japan, April 17, 2025.</li>
+                        <li><b>藤原進太郎</b>, 落合秀樹, “所望の復号遅延と信頼性を実現する Polar 符号化方式の設計,” 次世代無線通信技術イノベーション創生コンソーシアム, 東京, 2025 年 3 月 19 日 （ポスター).</li>
+                    </ol>
+                </section>
+
+                <section id="funding">
+                    <h2>Funding</h2>
+                    <ol>
+                        <li>
+                            JSPS Research Fellowship for Young Scientists, DC1 / 日本学術振興会 特別研究員 DC1, April 2026 - March 2029.
+                            <br>
+                            <b>(Amount: JPY 2.4 million per year / 年額支給額: 240万円)</b>
+                        </li>
+                        <li> IPA:Information-technology Promotion Agency, Japan, MITOU Target Program in 2025 (Quantum Computing Software Development Field) / 独立行政法人情報処理推進機構 2025 年度未踏ターゲット事業（量子コンピューティング技術を活用したソフトウェア開発分野）<br>
+                        <b>(Amount: JPY 3.96 million / 採択金額: 396万円)</b> 
+                        [<a href="https://www.ipa.go.jp/jinzai/mitou/target/2025/gaiyou-yn-2.html" target="_blank">Source</a>]
+                        </li>
+                    </ol>
+                </section>
+                
+                <section id="experience">
+                    <h2>Work Experience</h2>
+                    <ul>
+                        <li>Ericsson Japan, GFTL ER Radio S&R Research Lab (Research Intern), Aug 2024 - Oct 2024.</li>
+                    </ul>
+                </section>
+                
+                <section id="education">
+                    <h2>Education</h2>
+                    <ul>
+                        <li>Bachelor's Degree: Yokohama National University (2018 - 2024)</li>
+                        <li>Master's Degree: Yokohama National University (2024 - 2025)</li>
+                        <li>Ph.D. Candidate: Yokohama National University (2025 - Present)</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span>Computer | Protected Mode: On</span>
+            <span style="margin-left: auto;">100%</span>
+        </div>
 
     </div>
     
+    <script>
+        const tabs = document.querySelectorAll('.nav-btn');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                tabs.forEach(t => t.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
