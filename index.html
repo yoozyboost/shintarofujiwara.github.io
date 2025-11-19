@@ -20,6 +20,7 @@
         /* すべての要素でSegoe UIを強制 */
         * {
             font-family: 'Segoe UI', 'Meiryo', 'Noto Sans JP', sans-serif !important;
+            box-sizing: border-box; /* レイアウト崩れ防止 */
         }
 
         body {
@@ -29,19 +30,23 @@
             width: 100vw;
             overflow: hidden;
             color: #333;
-            
-            /* 文字間隔を全体的に少し狭くする */
             letter-spacing: -0.3px;
             
-            /* 背景: さらに明るく、鮮やかさを加えたオーロラ (静止画) */
+            /* 背景: 明るいオーロラ */
             background: radial-gradient(circle at 50% 120%, #0090a0 0%, #004045 60%, #000000 100%);
+
+            /* 【重要】配置方法の変更: Flexboxで画面中央に配置 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* --- Desktop Window Container --- */
         .desktop-window {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
+            /* 【重要】以前の absolute 配置を削除し、relativeに変更 */
+            position: relative;
+            /* top/left/transform を削除 */
+            
             width: 90%;
             max-width: 1000px;
             height: 85vh;
@@ -91,7 +96,7 @@
             margin-left: 8px;
             flex-grow: 1;
             font-weight: 400;
-            letter-spacing: 0.2px; /* タイトルだけは読みやすさ重視で少し広めに */
+            letter-spacing: 0.2px;
         }
 
         .window-controls {
@@ -182,7 +187,7 @@
         .profile-pic {
             width: 100%; height: 100%;
             background-color: #ddd;
-            background-image: url('myimage.jpeg'); /* 画像パスは適宜変更してください */
+            background-image: url('myimage.jpeg');
             background-size: cover;
             background-position: center;
             border: 1px solid #ccc;
@@ -232,13 +237,15 @@
 
         section {
             margin-bottom: 45px;
+            /* リンクで飛んだ際に上部が隠れないように余白を確保 */
+            scroll-margin-top: 20px;
         }
 
-        /* 小見出し (H2) のデザイン変更: 青色に戻し、シンプルな下線 */
+        /* 小見出し (H2) */
         h2 {
             font-size: 20px;
-            color: #004d99; /* Vistaブルーに戻す */
-            border-bottom: 1px solid #b0c4de; /* シンプルで細い線（少し青みのあるグレー） */
+            color: #004d99;
+            border-bottom: 1px solid #b0c4de;
             padding-bottom: 6px;
             margin-top: 0;
             margin-bottom: 15px;
@@ -271,12 +278,12 @@
             body {
                 background: #101518;
                 height: auto;
+                min-height: 100vh;
                 overflow-y: auto;
+                display: block; /* モバイル表示時は通常のブロック配置に戻す */
             }
             
             .desktop-window {
-                position: static;
-                transform: none;
                 width: 100%;
                 height: auto;
                 min-height: 100vh;
@@ -389,24 +396,24 @@
                 <section id="publications">
                     <h2>Publications</h2>
                     <ol>
-                        <li><b>S. Fujiwara</b> and H. Ochiai, "A Flexible Polar Decoding Architecture With Adjustable Latency and Reliability," in <i>IEEE Open Journal of the Communications Society</i>, vol. 5, pp. 951-964, 2024, <a href="https://doi.org/10.1109/OJCOMS.2024.3358054" target="_blank">doi: 10.1109/OJCOMS.2024.3358054</a>.</li>
-                        <li><b>S. Fujiwara</b> and N. Ishikawa, "Grover Adaptive Search With Spin Variables," in <i>IEEE Transactions on Quantum Engineering</i>, vol. 6, pp. 1-13, 2025, Art no. 3102013, <a href="https://doi.org/10.1109/TQE.2025.3595910" target="_blank">doi: 10.1109/TQE.2025.3595910</a>.</li>
+                        <li>S. Fujiwara and H. Ochiai, "A Flexible Polar Decoding Architecture With Adjustable Latency and Reliability," in <i>IEEE Open Journal of the Communications Society</i>, vol. 5, pp. 951-964, 2024, <a href="https://doi.org/10.1109/OJCOMS.2024.3358054" target="_blank">doi: 10.1109/OJCOMS.2024.3358054</a>.</li>
+                        <li>S. Fujiwara and N. Ishikawa, "Grover Adaptive Search With Spin Variables," in <i>IEEE Transactions on Quantum Engineering</i>, vol. 6, pp. 1-13, 2025, Art no. 3102013, <a href="https://doi.org/10.1109/TQE.2025.3595910" target="_blank">doi: 10.1109/TQE.2025.3595910</a>.</li>
                     </ol>
                 </section>
 
                 <section id="preprints">
                     <h2>Preprints</h2>
                     <ol>
-                        <li><b>S. Fujiwara</b>, N. Ishikawa, "Quantum Speedup for Polar Maximum Likelihood Decoding," arXiv preprint, <a href="https://arxiv.org/abs/2411.04727" target="_blank">arXiv:2411.04727</a>, 2024.</li>
-                        <li>T. Mikuriya, K. Yukiyoshi, <b>S. Fujiwara</b>, GTF. de Abreu, N. Ishikawa, "Quantum Speedup for the Quadratic Assignment Problem," arXiv preprint, <a href="https://arxiv.org/abs/2410.12181" target="_blank">arXiv:2410.12181</a>, 2024.</li>
+                        <li>Shintaro Fujiwara, Naoki Ishikawa, "Quantum Speedup for Polar Maximum Likelihood Decoding," arXiv preprint, <a href="https://arxiv.org/abs/2411.04727" target="_blank">arXiv:2411.04727</a>, 2024.</li>
+                        <li>Taku Mikuriya, Kein Yukiyoshi, Shintaro Fujiwara, Giuseppe Thadeu Freitas de Abreu, Naoki Ishikawa, "Quantum Speedup for the Quadratic Assignment Problem," arXiv preprint, <a href="https://arxiv.org/abs/2410.12181" target="_blank">arXiv:2410.12181</a>, 2024.</li>
                     </ol>
                 </section>
 
                 <section id="presentations">
                     <h2>Other Presentations</h2>
                     <ol>
-                        <li><b>S. Fujiwara</b>, P. V. Klaine, C. Li, A. Lahuerta-Lavieja, K. K. Nagalapur, S. Muruganathan, S. Malomsoky, and N. Ishikawa, “Enhancing Single-Link Initial Throughput via Early-CSI Feedback within Random Access Procedure,” IEICE Technical Committee on Radio Communication Systems (RCS), Gifu, Japan, April 17, 2025.</li>
-                        <li><b>藤原進太郎</b>, 落合秀樹, “所望の復号遅延と信頼性を実現する Polar 符号化方式の設計,” 次世代無線通信技術イノベーション創生コンソーシアム, 東京, 2025 年 3 月 19 日 （ポスター).</li>
+                        <li>S. Fujiwara, P. V. Klaine, C. Li, A. Lahuerta-Lavieja, K. K. Nagalapur, S. Muruganathan, S. Malomsoky, and N. Ishikawa, “Enhancing Single-Link Initial Throughput via Early-CSI Feedback within Random Access Procedure,” IEICE Technical Committee on Radio Communication Systems (RCS), Gifu, Japan, April 17, 2025.</li>
+                        <li>藤原進太郎, 落合秀樹, “所望の復号遅延と信頼性を実現する Polar 符号化方式の設計,” 次世代無線通信技術イノベーション創生コンソーシアム, 東京, 2025 年 3 月 19 日 （ポスター).</li>
                     </ol>
                 </section>
 
@@ -428,16 +435,16 @@
                 <section id="experience">
                     <h2>Work Experience</h2>
                     <ul>
-                        <li>Ericsson Japan, GFTL ER Radio S&R Research Lab (Research Intern), Aug 2024 - Oct 2024.</li>
+                        <li><b>Ericsson Japan</b>, GFTL ER Radio S&R Research Lab (Research Intern), Aug 2024 - Oct 2024.</li>
                     </ul>
                 </section>
                 
                 <section id="education">
                     <h2>Education</h2>
                     <ul>
-                        <li>Bachelor's Degree: Yokohama National University (2018 - 2024)</li>
-                        <li>Master's Degree: Yokohama National University (2024 - 2025)</li>
-                        <li>Ph.D. Candidate: Yokohama National University (2025 - Present)</li>
+                        <li><b>Bachelor's Degree:</b> Yokohama National University (2018 - 2024)</li>
+                        <li><b>Master's Degree:</b> Yokohama National University (2024 - 2025)</li>
+                        <li><b>Ph.D. Candidate:</b> Yokohama National University (2025 - Present)</li>
                     </ul>
                 </section>
 
